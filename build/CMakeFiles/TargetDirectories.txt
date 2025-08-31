@@ -1,0 +1,5 @@
+G:/Created/ray-tracer/build/CMakeFiles/raytracer.dir
+G:/Created/ray-tracer/build/CMakeFiles/ALL_BUILD.dir
+G:/Created/ray-tracer/build/CMakeFiles/ZERO_CHECK.dir
+G:/Created/ray-tracer/build/lib/CMakeFiles/raycore.dir
+G:/Created/ray-tracer/build/lib/CMakeFiles/image.dir
