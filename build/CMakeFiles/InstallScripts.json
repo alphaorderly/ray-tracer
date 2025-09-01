@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/woo/Desktop/sangsang/ray-tracer/build/cmake_install.cmake",
+		"/Users/woo/Desktop/sangsang/ray-tracer/build/lib/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

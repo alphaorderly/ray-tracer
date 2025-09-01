@@ -97,29 +97,30 @@ namespace raycore {
             *this /= len;
         }
     };
-}
 
-// Dot product
-inline double dot(const raycore::vec3& a, const raycore::vec3& b) {
-    return a.x * b.x + a.y * b.y + a.z * b.z;
-}
+    
+    // Dot product
+    inline double dot(const raycore::vec3& a, const raycore::vec3& b) {
+        return a.x * b.x + a.y * b.y + a.z * b.z;
+    }
 
-// Cross product
-inline raycore::vec3 cross(const raycore::vec3& a, const raycore::vec3& b) {
-    return raycore::vec3{
-        a.y * b.z - a.z * b.y,
-        a.z * b.x - a.x * b.z,
-        a.x * b.y - a.y * b.x
-    };
-}
+    // Cross product
+    inline raycore::vec3 cross(const raycore::vec3& a, const raycore::vec3& b) {
+        return raycore::vec3{
+            a.y * b.z - a.z * b.y,
+            a.z * b.x - a.x * b.z,
+            a.x * b.y - a.y * b.x
+        };
+    }
 
-// left scalar operations
-inline raycore::vec3 operator*(double scalar, const raycore::vec3& v) {
-    return raycore::vec3{v.x * scalar, v.y * scalar, v.z * scalar};
-}
+    // left scalar operations
+    inline raycore::vec3 operator*(double scalar, const raycore::vec3& v) {
+        return raycore::vec3{v.x * scalar, v.y * scalar, v.z * scalar};
+    }
 
 
-inline std::ostream& operator<<(std::ostream& os, const raycore::vec3& v) {
-    os << "vec3(" << v.x << ", " << v.y << ", " << v.z << ")";
-    return os;
+    inline std::ostream& operator<<(std::ostream& os, const raycore::vec3& v) {
+        os << "vec3(" << v.x << ", " << v.y << ", " << v.z << ")";
+        return os;
+    }
 }
