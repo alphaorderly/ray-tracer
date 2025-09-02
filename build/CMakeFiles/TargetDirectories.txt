@@ -1,9 +1,7 @@
-/Users/woo/Desktop/sangsang/ray-tracer/build/CMakeFiles/raytracer.dir
-/Users/woo/Desktop/sangsang/ray-tracer/build/CMakeFiles/edit_cache.dir
-/Users/woo/Desktop/sangsang/ray-tracer/build/CMakeFiles/rebuild_cache.dir
-/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/raycore.dir
-/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/camera.dir
-/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/image.dir
-/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/hit.dir
-/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/edit_cache.dir
-/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/rebuild_cache.dir
+G:/Created/ray-tracer/build/CMakeFiles/raytracer.dir
+G:/Created/ray-tracer/build/CMakeFiles/ALL_BUILD.dir
+G:/Created/ray-tracer/build/CMakeFiles/ZERO_CHECK.dir
+G:/Created/ray-tracer/build/lib/CMakeFiles/raycore.dir
+G:/Created/ray-tracer/build/lib/CMakeFiles/camera.dir
+G:/Created/ray-tracer/build/lib/CMakeFiles/image.dir
+G:/Created/ray-tracer/build/lib/CMakeFiles/hit.dir
