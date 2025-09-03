@@ -1,5 +1,9 @@
 #include <iostream>
 #include <limits>
+#include <random>
+#include <sstream>
+#include <string>
+#include <ctime>
 
 #include "ppm.hpp"
 #include "vec3.hpp"
@@ -7,64 +11,76 @@
 #include "color.hpp"
 #include "camera.hpp"
 
-#include "hittable_list.hpp"
-#include "hit_record.hpp"
-#include "sphere.hpp"
+#include "Dielectric.hpp"
+#include "HittableList.hpp"
+#include "Sphere.hpp"
 
 const int WIDTH = 256;
 const int HEIGHT = 256;
+
+std::mt19937_64 rng(time(NULL)); // 나중엔 시간시드/스레드별 시드
+std::uniform_real_distribution<double> uni(0.0, 1.0);
+
+const int SAMPLES_PER_PIXEL = 50;
+const int DEPTH = 50;
+
+double random_double() {
+    return uni(rng);
+}
 
 int main() {
     image::PPM img(WIDTH, HEIGHT);
 
     double aspect_ratio = static_cast<double>(WIDTH) / HEIGHT;
 
-    double focal_length = 1.0;
-
     camera::Camera cam = camera::Camera::LookAt(
-        raycore::vec3(0, 0, 0),
-        raycore::vec3(0, 0, -1), 
-        raycore::vec3(0, 1, 0),
+        raycore::Vec3(0, 0, 0),
+        raycore::Vec3(0, 0, -1), 
+        raycore::Vec3(0, 1, 0),
         90.0,
         aspect_ratio,
         2.0
     );
 
-    hit::hittable_list world;
+    shapes::HittableList world;
 
-    world.add(std::make_shared<hit::Sphere>(raycore::vec3(0, 0, -2), 0.5));
-    world.add(std::make_shared<hit::Sphere>(raycore::vec3(0, -1, -1), 1));
+    world.add(std::make_shared<shapes::Sphere>(raycore::Vec3(-1, 0, -1), 0.5, std::make_shared<materials::Dielectric>(0.2))); 
 
     for (int r = 0; r < HEIGHT; ++r) {
         for (int c = 0; c < WIDTH; ++c) {
-            double u = static_cast<double>(c) / (WIDTH - 1);
-            double v = static_cast<double>(r) / (HEIGHT - 1);
 
-            hit::hit_record rec;
+            raycore::Vec3 pixel_color(0, 0, 0);
 
-            raycore::ray ray = cam.getRay(u, v);
-
-            bool isHit = world.hit(ray, 0.001, std::numeric_limits<double>::infinity(), rec);
-
-            if(isHit) {
-                auto n = rec.normal;
-                auto col = 0.5 * raycore::vec3(n.x + 1.0, n.y + 1.0, n.z + 1.0);
-                img.setPixel(c, HEIGHT - r - 1,
-                            int(255.999*col.x), int(255.999*col.y), int(255.999*col.z));
-            } else {
-                raycore::vec3 color = raycore::sky_color(ray);
-
-                int ir = static_cast<int>(255.999 * color.x);
-                int ig = static_cast<int>(255.999 * color.y);
-                int ib = static_cast<int>(255.999 * color.z);
-
-                img.setPixel(c, HEIGHT - r - 1, ir, ig, ib);
+            for (int s = 0; s < SAMPLES_PER_PIXEL; ++s) {
+                double u = (c + random_double()) / (WIDTH-1);
+                double v = (r + random_double()) / (HEIGHT-1);
+                raycore::Ray ray = cam.getRay(u, v);
+                pixel_color += raycore::ray_color(ray, world, DEPTH);
             }
 
+            // 평균
+            pixel_color /= SAMPLES_PER_PIXEL;
+
+            // 감마 보정 (gamma=2.0)
+            pixel_color = raycore::Vec3(sqrt(pixel_color.x),
+                            sqrt(pixel_color.y),
+                            sqrt(pixel_color.z));
+
+            img.setPixel(c, HEIGHT - r - 1, int(255*pixel_color.x), int(255*pixel_color.y), int(255*pixel_color.z));
         }
     }
 
-    img.save("output.ppm");
+    int random_integer = std::uniform_int_distribution<int>(0, 1000000)(rng);
+
+    std::ostringstream ss;
+
+    ss << "output_" << random_integer << ".ppm";
+
+    std::string filename = ss.str();
+
+    img.save(filename);
+
+    std::cout << "Saved image to " << filename << std::endl;
 
     return 0;
 }

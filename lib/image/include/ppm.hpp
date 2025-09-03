@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <fstream>
+#include <string>
 
 namespace image {
     class PPM {
@@ -16,6 +17,6 @@ namespace image {
 
             void setPixel(int x, int y, unsigned char r, unsigned char g, unsigned char b);
 
-            void save(const char* filename);
+            void save(const std::string& filename);
     };
 }
