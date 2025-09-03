@@ -3,7 +3,5 @@
     "fstream": "cpp",
     "xiosbase": "cpp",
     "sstream": "cpp"
-  },
-  "C_Cpp.clang_format_fallbackStyle": "Google",
-  "editor.formatOnSave": true
+  }
 }
