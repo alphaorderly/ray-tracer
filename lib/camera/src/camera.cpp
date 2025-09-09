@@ -4,7 +4,8 @@
 namespace camera
 {
     /**
-     * 원점으로부터 수평으로 s 만큼, 수직으로 t 만큼 떨어진 지점으로 향하는 광선을 반환
+     * 카메라 뷰포트의 lower left corner 에서 (s, t) 위치로 향하는 광선을 생성
+     * s와 t는 뷰포트 내부에서의 상대적인 위치를 나타냄 (0,0이 lower left corner, 1,1이 upper right corner)
      * @param s 수평 방향으로의 이동 거리 (0 ~ 1)
      * @param t 수직 방향으로의 이동 거리 (0 ~ 1)
      */

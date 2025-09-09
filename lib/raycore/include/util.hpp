@@ -49,7 +49,7 @@ namespace raycore
     }
 
     /**
-     * @brief Reflect a vector about a normal
+     * 법선벡터인 n 에 대한 벡터 v의 이상적 반사벡터를 반환한다.
      */
     inline Vec3 reflect(const Vec3 &v, const Vec3 &n)
     {
@@ -57,17 +57,37 @@ namespace raycore
     }
 
     /**
-     * @brief Refract a vector through a surface
+     * @brief       표면에서 벡터를 굴절시키는 함수
+     * @param v     입사 벡터 (the incident vector)
+     * @param n     표면의 법선 벡터 (the surface normal)
+     * @param etai_over_etat 굴절률의 비율 (η_i / η_t)
+     * @return      굴절된 벡터. 내부 전반사가 일어나면 영벡터를 반환.
      */
     inline Vec3 refract(const Vec3 &v, const Vec3 &n, double etai_over_etat)
     {
+        // 입사광선 벡터를 정규화하여 단위 벡터로 만든다.
         Vec3 uv = v.normalize();
+
+        // uv와 법선 벡터 n의 내적을 계산한다. 이는 두 벡터 사이 각도의 코사인 값(cosθ)과 같다.
+        // 두 벡터 모두 단위 벡터이므로 |uv| = 1, |n| = 1이다.
         double dt = dot(uv, n);
+
+        // 스넬의 법칙을 벡터 형태로 계산하기 위한 판별식(discriminant)을 구한다.
+        // 판별식 = 1.0 - (η_i/η_t)² * (1 - cos²θ_i) = 1.0 - (η_i/η_t)² * sin²θ_i
+        // 스넬의 법칙(η_i * sinθ_i = η_t * sinθ_t)에 의해 위 식은 1.0 - sin²θ_t = cos²θ_t 가 된다.
         double discriminant = 1.0 - etai_over_etat * etai_over_etat * (1.0 - dt * dt);
+
+        // 판별식이 0보다 크면, 즉 실수 해가 존재하면 굴절이 일어난다.
         if (discriminant > 0)
         {
+            // 스넬의 법칙(벡터 형태)을 이용해 굴절 광선 벡터를 계산하고 반환한다.
+            // 굴절 벡터 R' = (η_i/η_t) * (R + n*cosθ_i) - n*cosθ_t
+            // 여기서 R은 입사 벡터, n은 법선 벡터이다.
             return etai_over_etat * (uv - n * dt) - n * std::sqrt(discriminant);
         }
+
+        // 판별식이 0보다 작거나 같으면 내부 전반사(total internal reflection)가 발생한 것이다.
+        // 이 경우 굴절 광선은 존재하지 않으므로 영벡터(zero vector)를 반환한다.
         return Vec3();
     }
 

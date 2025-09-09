@@ -79,6 +79,6 @@ namespace camera
 
   private:
     raycore::Vec3 origin, lowerLeftCorner, horizontal, vertical;
-    raycore::Vec3 u, v, w; // ← 나중에 DOF에서 사용
+    raycore::Vec3 u, v, w;
   };
-} // namespace camera
+}
