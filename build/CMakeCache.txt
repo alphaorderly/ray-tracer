@@ -219,7 +219,7 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 camera_LIB_DEPENDS:STATIC=general;raycore;
 
 //Dependencies for the target
-materials_LIB_DEPENDS:STATIC=general;raycore;
+materials_LIB_DEPENDS:STATIC=general;raycore;general;texture;
 
 //Value Computed by CMake
 raytracer_BINARY_DIR:STATIC=/Users/woo/Desktop/sangsang/ray-tracer/build

@@ -1,5 +1,6 @@
 #include "camera.hpp"
 #include <iostream>
+#include "util.hpp"
 
 namespace camera
 {
@@ -11,16 +12,11 @@ namespace camera
      */
     raycore::Ray Camera::getRay(double s, double t) const
     {
-
-        // s와 t의 유효성을 검사 ( 0.0 ~ 1.0 인지 )
-        if (s < 0.0 || s > 1.0 || t < 0.0 || t > 1.0)
-        {
-            std::cerr << "Error: s and t should be in the range [0, 1]. Got s=" << s << ", t=" << t << std::endl;
-            throw std::out_of_range("s and t must be in [0, 1]");
-        }
+        raycore::Vec3 rd = lensRadius * raycore::random_in_unit_disk();
+        raycore::Vec3 offset = u * rd.x + v * rd.y;
 
         return raycore::Ray(
-            origin,
-            lowerLeftCorner + s * horizontal + t * vertical - origin);
+            origin + offset,
+            lowerLeftCorner + s * horizontal + t * vertical - origin - offset);
     }
 }

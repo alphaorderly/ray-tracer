@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lib/libshapes.a"
+			"path" : "lib/libcamera.a"
 		}
 	],
 	"backtrace" : 1,
@@ -28,25 +28,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 25,
+				"line" : 31,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 49,
+				"line" : 55,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 43,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 59,
+				"line" : 65,
 				"parent" : 0
 			}
 		]
@@ -64,11 +64,15 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include"
+					"path" : "/Users/woo/Desktop/sangsang/ray-tracer/lib/camera/include"
 				},
 				{
 					"backtrace" : 2,
 					"path" : "/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include"
 				},
 				{
 					"backtrace" : 2,
@@ -86,8 +90,7 @@
 			},
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
@@ -98,9 +101,9 @@
 			"id" : "raycore::@306ed2d68c6501e8728f"
 		}
 	],
-	"id" : "shapes::@306ed2d68c6501e8728f",
-	"name" : "shapes",
-	"nameOnDisk" : "libshapes.a",
+	"id" : "camera::@306ed2d68c6501e8728f",
+	"name" : "camera",
+	"nameOnDisk" : "libcamera.a",
 	"paths" : 
 	{
 		"build" : "lib",
@@ -112,8 +115,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1
+				0
 			]
 		}
 	],
@@ -122,13 +124,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "lib/shapes/src/Sphere.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "lib/shapes/src/HittableList.cpp",
+			"path" : "lib/camera/src/camera.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

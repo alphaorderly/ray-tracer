@@ -32,6 +32,10 @@ add_library(camera
     camera/src/camera.cpp
 )
 
+# Texture library (no dependencies)
+add_library(texture
+    texture/src/Checker.cpp
+)
 
 # Include directories
 target_include_directories(raycore PUBLIC 
@@ -43,9 +47,10 @@ target_include_directories(materials PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/material
 target_include_directories(shapes PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/shapes/include)
 target_include_directories(camera PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/camera/include)
 target_include_directories(image PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/image/include)
+target_include_directories(texture PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/texture/include)
 
 # Dependency relationships
-target_link_libraries(materials PUBLIC raycore)
+target_link_libraries(materials PUBLIC raycore texture)
 target_link_libraries(shapes PUBLIC raycore)
 target_link_libraries(camera PUBLIC raycore)
 

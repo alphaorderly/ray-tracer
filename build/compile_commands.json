@@ -1,7 +1,7 @@
 [
 {
   "directory": "/Users/woo/Desktop/sangsang/ray-tracer/build",
-  "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/image/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/camera/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/raytracer.dir/src/cli/raytrace_cli.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/src/cli/raytrace_cli.cpp",
+  "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/image/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/camera/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/raytracer.dir/src/cli/raytrace_cli.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/src/cli/raytrace_cli.cpp",
   "file": "/Users/woo/Desktop/sangsang/ray-tracer/src/cli/raytrace_cli.cpp",
   "output": "/Users/woo/Desktop/sangsang/ray-tracer/build/CMakeFiles/raytracer.dir/src/cli/raytrace_cli.cpp.o"
 },
@@ -37,19 +37,19 @@
 },
 {
   "directory": "/Users/woo/Desktop/sangsang/ray-tracer/build",
-  "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -g -std=gnu++17 -arch arm64 -o lib/CMakeFiles/materials.dir/materials/src/Lambertian.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Lambertian.cpp",
+  "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include -g -std=gnu++17 -arch arm64 -o lib/CMakeFiles/materials.dir/materials/src/Lambertian.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Lambertian.cpp",
   "file": "/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Lambertian.cpp",
   "output": "/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/materials.dir/materials/src/Lambertian.cpp.o"
 },
 {
   "directory": "/Users/woo/Desktop/sangsang/ray-tracer/build",
-  "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -g -std=gnu++17 -arch arm64 -o lib/CMakeFiles/materials.dir/materials/src/Metal.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Metal.cpp",
+  "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include -g -std=gnu++17 -arch arm64 -o lib/CMakeFiles/materials.dir/materials/src/Metal.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Metal.cpp",
   "file": "/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Metal.cpp",
   "output": "/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/materials.dir/materials/src/Metal.cpp.o"
 },
 {
   "directory": "/Users/woo/Desktop/sangsang/ray-tracer/build",
-  "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -g -std=gnu++17 -arch arm64 -o lib/CMakeFiles/materials.dir/materials/src/Dielectric.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Dielectric.cpp",
+  "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include -g -std=gnu++17 -arch arm64 -o lib/CMakeFiles/materials.dir/materials/src/Dielectric.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Dielectric.cpp",
   "file": "/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Dielectric.cpp",
   "output": "/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/materials.dir/materials/src/Dielectric.cpp.o"
 },
@@ -70,5 +70,11 @@
   "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/camera/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -g -std=gnu++17 -arch arm64 -o lib/CMakeFiles/camera.dir/camera/src/camera.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/lib/camera/src/camera.cpp",
   "file": "/Users/woo/Desktop/sangsang/ray-tracer/lib/camera/src/camera.cpp",
   "output": "/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/camera.dir/camera/src/camera.cpp.o"
+},
+{
+  "directory": "/Users/woo/Desktop/sangsang/ray-tracer/build",
+  "command": "/usr/bin/clang++ -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include -g -std=gnu++17 -arch arm64 -o lib/CMakeFiles/texture.dir/texture/src/Checker.cpp.o -c /Users/woo/Desktop/sangsang/ray-tracer/lib/texture/src/Checker.cpp",
+  "file": "/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/src/Checker.cpp",
+  "output": "/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/texture.dir/texture/src/Checker.cpp.o"
 }
 ]

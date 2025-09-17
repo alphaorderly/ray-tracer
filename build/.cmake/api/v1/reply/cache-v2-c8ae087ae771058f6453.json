@@ -1155,7 +1155,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;raycore;"
+			"value" : "general;raycore;general;texture;"
 		},
 		{
 			"name" : "raytracer_BINARY_DIR",

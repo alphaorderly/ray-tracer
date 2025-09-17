@@ -34,19 +34,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 48,
+				"line" : 53,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 42,
+				"line" : 46,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 58,
+				"line" : 63,
 				"parent" : 0
 			}
 		]
@@ -73,6 +73,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include"
 				}
 			],
 			"language" : "CXX",
@@ -97,6 +101,10 @@
 		{
 			"backtrace" : 2,
 			"id" : "raycore::@306ed2d68c6501e8728f"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "texture::@306ed2d68c6501e8728f"
 		}
 	],
 	"id" : "materials::@306ed2d68c6501e8728f",

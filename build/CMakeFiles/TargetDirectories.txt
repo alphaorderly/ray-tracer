@@ -6,5 +6,6 @@
 /Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/materials.dir
 /Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/shapes.dir
 /Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/camera.dir
+/Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/texture.dir
 /Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/edit_cache.dir
 /Users/woo/Desktop/sangsang/ray-tracer/build/lib/CMakeFiles/rebuild_cache.dir

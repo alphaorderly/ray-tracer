@@ -8,7 +8,7 @@ namespace materials
      *
      * @param rayIn 입사 광선
      * @param rec 충돌 정보
-     * @param attenuation 감쇠 (반사/굴절 후 색상 변화), 즉 재질의 색상을 나타낸다.
+     * @param attenuation 감쇠 (반사/굴절 후 색상 변화).
      * @param scattered 산란된 광선 ( 결과 )
      */
     bool Dielectric::scatter(const raycore::Ray &rayIn,

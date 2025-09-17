@@ -28,6 +28,7 @@ namespace camera
         raycore::Vec3 vup,
         double vfov_deg,
         double aspect_ratio,
+        double aperture,
         double focus_dist)
     {
       /**
@@ -61,7 +62,7 @@ namespace camera
       raycore::Vec3 vertical = viewport_height * v;
       raycore::Vec3 lower_left = origin - horizontal / 2.0 - vertical / 2.0 - focus_dist * w;
 
-      Camera cam(origin, lower_left, horizontal, vertical);
+      Camera cam(origin, lower_left, horizontal, vertical, aperture / 2.0);
       cam.u = u;
       cam.v = v;
       cam.w = w;
@@ -71,14 +72,15 @@ namespace camera
     Camera(raycore::Vec3 origin,
            raycore::Vec3 lowerLeftCorner,
            raycore::Vec3 horizontal,
-           raycore::Vec3 vertical)
+           raycore::Vec3 vertical, double lensRadius = 0.0)
         : origin(origin), lowerLeftCorner(lowerLeftCorner),
-          horizontal(horizontal), vertical(vertical) {}
+          horizontal(horizontal), vertical(vertical), lensRadius(lensRadius) {}
 
     raycore::Ray getRay(double s, double t) const;
 
   private:
     raycore::Vec3 origin, lowerLeftCorner, horizontal, vertical;
     raycore::Vec3 u, v, w;
+    double lensRadius = 0.0;
   };
 }

@@ -47,13 +47,13 @@ cmake_ninja_workdir = /Users/woo/Desktop/sangsang/ray-tracer/build/
 #############################################
 # Order-only phony target for raytracer
 
-build cmake_object_order_depends_target_raytracer: phony || cmake_object_order_depends_target_camera cmake_object_order_depends_target_image cmake_object_order_depends_target_materials cmake_object_order_depends_target_raycore cmake_object_order_depends_target_shapes
+build cmake_object_order_depends_target_raytracer: phony || cmake_object_order_depends_target_camera cmake_object_order_depends_target_image cmake_object_order_depends_target_materials cmake_object_order_depends_target_raycore cmake_object_order_depends_target_shapes cmake_object_order_depends_target_texture
 
 build CMakeFiles/raytracer.dir/src/cli/raytrace_cli.cpp.o: CXX_COMPILER__raytracer_unscanned_Debug /Users/woo/Desktop/sangsang/ray-tracer/src/cli/raytrace_cli.cpp || cmake_object_order_depends_target_raytracer
   CONFIG = Debug
   DEP_FILE = CMakeFiles/raytracer.dir/src/cli/raytrace_cli.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64
-  INCLUDES = -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/image/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/camera/include
+  INCLUDES = -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/image/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/camera/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include
   OBJECT_DIR = CMakeFiles/raytracer.dir
   OBJECT_FILE_DIR = CMakeFiles/raytracer.dir/src/cli
 
@@ -65,11 +65,11 @@ build CMakeFiles/raytracer.dir/src/cli/raytrace_cli.cpp.o: CXX_COMPILER__raytrac
 #############################################
 # Link the executable raytracer
 
-build raytracer: CXX_EXECUTABLE_LINKER__raytracer_Debug CMakeFiles/raytracer.dir/src/cli/raytrace_cli.cpp.o | lib/libraycore.a lib/libimage.a lib/libcamera.a lib/libshapes.a lib/libmaterials.a lib/libraycore.a || lib/libcamera.a lib/libimage.a lib/libmaterials.a lib/libraycore.a lib/libshapes.a
+build raytracer: CXX_EXECUTABLE_LINKER__raytracer_Debug CMakeFiles/raytracer.dir/src/cli/raytrace_cli.cpp.o | lib/libraycore.a lib/libimage.a lib/libcamera.a lib/libshapes.a lib/libmaterials.a lib/libraycore.a lib/libtexture.a || lib/libcamera.a lib/libimage.a lib/libmaterials.a lib/libraycore.a lib/libshapes.a lib/libtexture.a
   CONFIG = Debug
   FLAGS = -g -arch arm64
   LINK_FLAGS = -Wl,-search_paths_first -Wl,-headerpad_max_install_names
-  LINK_LIBRARIES = lib/libraycore.a  lib/libimage.a  lib/libcamera.a  lib/libshapes.a  lib/libmaterials.a  lib/libraycore.a
+  LINK_LIBRARIES = lib/libraycore.a  lib/libimage.a  lib/libcamera.a  lib/libshapes.a  lib/libmaterials.a  lib/libraycore.a  lib/libtexture.a
   OBJECT_DIR = CMakeFiles/raytracer.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -206,13 +206,13 @@ build lib/libimage.a: CXX_STATIC_LIBRARY_LINKER__image_Debug lib/CMakeFiles/imag
 #############################################
 # Order-only phony target for materials
 
-build cmake_object_order_depends_target_materials: phony || cmake_object_order_depends_target_raycore
+build cmake_object_order_depends_target_materials: phony || cmake_object_order_depends_target_raycore cmake_object_order_depends_target_texture
 
 build lib/CMakeFiles/materials.dir/materials/src/Lambertian.cpp.o: CXX_COMPILER__materials_unscanned_Debug /Users/woo/Desktop/sangsang/ray-tracer/lib/materials/src/Lambertian.cpp || cmake_object_order_depends_target_materials
   CONFIG = Debug
   DEP_FILE = lib/CMakeFiles/materials.dir/materials/src/Lambertian.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64
-  INCLUDES = -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include
+  INCLUDES = -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include
   OBJECT_DIR = lib/CMakeFiles/materials.dir
   OBJECT_FILE_DIR = lib/CMakeFiles/materials.dir/materials/src
 
@@ -220,7 +220,7 @@ build lib/CMakeFiles/materials.dir/materials/src/Metal.cpp.o: CXX_COMPILER__mate
   CONFIG = Debug
   DEP_FILE = lib/CMakeFiles/materials.dir/materials/src/Metal.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64
-  INCLUDES = -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include
+  INCLUDES = -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include
   OBJECT_DIR = lib/CMakeFiles/materials.dir
   OBJECT_FILE_DIR = lib/CMakeFiles/materials.dir/materials/src
 
@@ -228,7 +228,7 @@ build lib/CMakeFiles/materials.dir/materials/src/Dielectric.cpp.o: CXX_COMPILER_
   CONFIG = Debug
   DEP_FILE = lib/CMakeFiles/materials.dir/materials/src/Dielectric.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64
-  INCLUDES = -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include
+  INCLUDES = -I/Users/woo/Desktop/sangsang/ray-tracer/lib/materials/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/raycore/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/shapes/include -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include
   OBJECT_DIR = lib/CMakeFiles/materials.dir
   OBJECT_FILE_DIR = lib/CMakeFiles/materials.dir/materials/src
 
@@ -240,7 +240,7 @@ build lib/CMakeFiles/materials.dir/materials/src/Dielectric.cpp.o: CXX_COMPILER_
 #############################################
 # Link the static library lib/libmaterials.a
 
-build lib/libmaterials.a: CXX_STATIC_LIBRARY_LINKER__materials_Debug lib/CMakeFiles/materials.dir/materials/src/Lambertian.cpp.o lib/CMakeFiles/materials.dir/materials/src/Metal.cpp.o lib/CMakeFiles/materials.dir/materials/src/Dielectric.cpp.o || lib/libraycore.a
+build lib/libmaterials.a: CXX_STATIC_LIBRARY_LINKER__materials_Debug lib/CMakeFiles/materials.dir/materials/src/Lambertian.cpp.o lib/CMakeFiles/materials.dir/materials/src/Metal.cpp.o lib/CMakeFiles/materials.dir/materials/src/Dielectric.cpp.o || lib/libraycore.a lib/libtexture.a
   ARCH_FLAGS = -arch arm64
   CONFIG = Debug
   LANGUAGE_COMPILE_FLAGS = -g
@@ -328,6 +328,41 @@ build lib/libcamera.a: CXX_STATIC_LIBRARY_LINKER__camera_Debug lib/CMakeFiles/ca
   TARGET_FILE = lib/libcamera.a
   TARGET_PDB = camera.a.dbg
 
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target texture
+
+
+#############################################
+# Order-only phony target for texture
+
+build cmake_object_order_depends_target_texture: phony || .
+
+build lib/CMakeFiles/texture.dir/texture/src/Checker.cpp.o: CXX_COMPILER__texture_unscanned_Debug /Users/woo/Desktop/sangsang/ray-tracer/lib/texture/src/Checker.cpp || cmake_object_order_depends_target_texture
+  CONFIG = Debug
+  DEP_FILE = lib/CMakeFiles/texture.dir/texture/src/Checker.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64
+  INCLUDES = -I/Users/woo/Desktop/sangsang/ray-tracer/lib/texture/include
+  OBJECT_DIR = lib/CMakeFiles/texture.dir
+  OBJECT_FILE_DIR = lib/CMakeFiles/texture.dir/texture/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target texture
+
+
+#############################################
+# Link the static library lib/libtexture.a
+
+build lib/libtexture.a: CXX_STATIC_LIBRARY_LINKER__texture_Debug lib/CMakeFiles/texture.dir/texture/src/Checker.cpp.o
+  ARCH_FLAGS = -arch arm64
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = lib/CMakeFiles/texture.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libtexture.a
+  TARGET_PDB = texture.a.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -369,11 +404,15 @@ build libraycore.a: phony lib/libraycore.a
 
 build libshapes.a: phony lib/libshapes.a
 
+build libtexture.a: phony lib/libtexture.a
+
 build materials: phony lib/libmaterials.a
 
 build raycore: phony lib/libraycore.a
 
 build shapes: phony lib/libshapes.a
+
+build texture: phony lib/libtexture.a
 
 # =============================================================================
 # Folder targets.
@@ -390,7 +429,7 @@ build all: phony raytracer lib/all
 #############################################
 # Folder: /Users/woo/Desktop/sangsang/ray-tracer/build/lib
 
-build lib/all: phony lib/libraycore.a lib/libimage.a lib/libmaterials.a lib/libshapes.a lib/libcamera.a
+build lib/all: phony lib/libraycore.a lib/libimage.a lib/libmaterials.a lib/libshapes.a lib/libcamera.a lib/libtexture.a
 
 # =============================================================================
 # Built-in targets
